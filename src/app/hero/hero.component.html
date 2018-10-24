@@ -1,0 +1,21 @@
+<div class="card hero-top-margin">
+  <div class="card-body">
+    <table class="table table-bordered hero-top-margin">
+      <thead class="thead-dark">
+        <th>ID</th>
+        <th>NAME</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hero of heroes" (click)="onSelect(hero)">
+          <td>{{hero.id}}</td>
+          <td>{{hero.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="selectedHero">
+      <h4>ID : {{selectedHero.id}}</h4>
+      <h4>Name : {{selectedHero.name}}</h4>
+      <input type="text" name="name" [(ngModel)]="selectedHero.name">
+    </div>
+  </div>
+</div>
